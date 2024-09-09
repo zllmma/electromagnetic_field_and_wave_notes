@@ -288,3 +288,51 @@ $
       integral_S gradient times bold(F) dot dif bold(S) = integral.cont_C bold(F) dot dif bold(l)
     $
   ])
+
+
+== 无旋场与无散场
+
+=== 无旋场
+
+若一个矢量场的旋度处处为0, 即
+#bq([
+  $
+    gradient times F eq.triple 0
+  $
+])
+
+则称其为无旋场, 是由散度源产生的 (如静电场)
+
+由斯托克斯定理, 无旋场的曲线积分与路径无关, 只与起点和终点有关
+
+- 一个结论: 标量场的梯度的旋度恒等于0
+  #bq([
+    $
+      gradient times (gradient u) eq.triple 0
+    $
+  ])
+
+  由此得到: 一个无旋场总可以表示成某个标量场的梯度.
+
+=== 无散场
+
+类似的, 无散场满足任一点散度为0
+#bq([
+  $
+    gradient dot F eq.triple 0
+  $
+])
+它是由漩涡源产生的 (如静磁场)
+
+由高斯定理, 无散场通过任何闭合曲面的通量恒等于0
+
+- 一个结论: 矢量场的旋度的散度等于0
+  #bq([
+    $
+      gradient dot (gradient times A) eq.triple 0
+    $
+  ])
+
+  由此得到: 无散场总可以表示为一个矢量场的旋度
+
+

@@ -336,3 +336,36 @@ $
   由此得到: 无散场总可以表示为一个矢量场的旋度
 
 
+== 拉普拉斯运算与格林定理
+=== 拉普拉斯运算
+对标量的梯度再求散度, 称为对标量的拉普拉斯运算, 记作
+
+#bq([
+  $
+    gradient dot (gradient u) &= gradient^2 u \
+    &= (diff^2 u) / (diff x^2) + (diff^2 u) / (diff y^2) + (diff^2 u) / (diff z^2) \
+    &= diff^2_i u
+  $
+])
+
+对矢量场的拉普拉斯运算定义为
+#bq([
+  $
+    gradient^2 F &= gradient (gradient dot F) - gradient times (gradient times F)\
+    &= e_x gradient^2 F_x + e_y gradient^2 F_y + e_z gradient^2 F_z\
+    &= e_i gradient^2 F_i = e_i (diff^2_j F_i)
+  $
+])
+
+=== 格林定理
+格林第二恒等式: $psi$, $phi$ 是两个任意标量函数, 则
+
+#bq([
+  $
+    integral_(V) (phi gradient^2 psi - psi gradient^2 phi) dif V = integral.cont_S (
+      phi (diff psi) / (diff n) - psi (diff phi) / (diff n)
+    ) dif S
+  $
+])
+== 亥姆霍兹定理
+在有限的区域中, 任一矢量场由它的散度, 旋度和边界条件唯一地确定, 且可表示为一个无散场和一个无旋场的叠加

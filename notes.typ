@@ -1,4 +1,4 @@
-#import "@preview/ilm:1.2.1": *
+#import "@preview/ilm:1.4.0": *
 
 #set text(lang: "zh")
 
@@ -369,3 +369,101 @@ $
 ])
 == 亥姆霍兹定理
 在有限的区域中, 任一矢量场由它的散度, 旋度和边界条件唯一地确定, 且可表示为一个无散场和一个无旋场的叠加
+
+= 电磁场的基本规律
+
+#let bE = $bold(E)$
+#let bH = $bold(H)$
+#let bB = $bold(B)$
+#let bD = $bold(D)$
+
+== 媒质的电磁特性
+=== 电介质的极化 电位移矢量
++ 电介质内部的电场强度可视为自由电荷产生的外电场和极化电荷产生的附加电场的叠加
+  #bq($
+    bold(E) = bold(E)_0 + bold(E)'
+  $)
+
++ 极化强度
+  #bq($
+    bold(P) = lim_(Delta V -> 0) (sum_(i) bold(p)_i) / (Delta V)
+  $)
+
+  - 对于线性和各向同性介质，极化强度和电解质中的合成电场强度成正比
+    #bq($
+      bold(P)(bold(r)) = chi_e epsilon_0 bE(bold(r))
+    $)
+    其中 $chi_e$ 为电极化密度
+
++ 极化电荷
+  - 极化电荷体密度
+    #blockquote($
+      rho_P = - nabla dot bold(P)
+    $)
+  - 电介质表面极化电荷面密度
+    #bq($
+      rho_(S P) = bold(P) bold(dot) bold(e)_n
+    $)
++ 电介质的本构关系
+  - 电位移矢量
+    #bq($
+      bold(D)(bold(r)) &= epsilon_0 bold(E)(bold(r)) + bold(P)(bold(r)) = epsilon_0 bold(E)(
+        bold(r)
+      )+chi_e epsilon_0 bold(E)(bold(r))\
+      &= (1 + chi_e) epsilon_0 bold(E)(bold(r))\
+      &= epsilon_r epsilon_0 bold(E)(bold(r)) = epsilon bold(E)(bold(r))
+    $)
+    其中 $epsilon = epsilon_r epsilon_0$ 为介电常数，$epsilon_r = 1 + chi_e$ 为相对介电常数
+
+=== 磁介质的磁化 磁场强度
++ 和电介质类似，磁介质中的磁感应强度是真空中传导电流产生的磁感应强度和磁化电流产生的磁感应强度的叠加，即
+  #bq($
+    bold(B) = bold(B)_0 + bold(B)'
+  $)
+
++ 磁化强度
+  #bq($
+    bold(M) = lim_(Delta V->0) frac(sum_(i) bold(p)_(m i),Delta V)
+  $)
+  - 对于线性和各向同性介质，磁化强度和电介质中的磁场强度成正比，即
+    #bq($
+      bold(M) = chi_m bold(H)
+    $)
+    其中 $chi_m$ 称为磁化率，磁场强度的定义为
+    #bq($
+      bold(H) = bold(B) / mu_0 - bold(M)
+    $)
+
+
++ 磁化电流
+  - 磁介质内磁化电流体密度
+    #bq($
+      bold(J)_M = nabla times bold(M)
+    $)
+  - 表面
+    #bq($
+      bold(J)_(S M) = bold(M) times bold(e)_n
+    $)
+
+
++ 磁介质的本构关系
+  #bq($
+    bold(B) = (1+chi_m) mu_0 bold(H) = mu_r mu_0 bold(H) = mu bold(H)
+  $)
+  $mu_r$ --- 相对磁导率，$mu$ --- 磁导率
+
+== 媒质的传导特性
++ 欧姆定理的微分形式
+  #bq($
+    bold(J) = sigma bold(E)
+  $)
+
++ 电场在导电媒质做功为
+  #bq($
+    dif W &= dif bold(F) dot dif bold(l) = rho dif V bold(E) dot bold(v) dif t \
+    &= bold(E) dot (rho bold(v)) dif V dif t \
+    &= bold(E) dot bold(J) dif V dif t
+  $)
+可以看出，电场对单位体积提供的功率为 $p = bold(J) dot bold(E)$
+
+== 麦克斯韦方程组

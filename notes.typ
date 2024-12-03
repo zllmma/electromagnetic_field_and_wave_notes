@@ -509,6 +509,8 @@ $)
 
 其中，单位矢量 $bold(e)_n$ 由媒质2指向媒质1
 
+两种特殊情况：一边的媒质为导体，一边的媒质为理想介质；两边是不同的理想介质
+
 == 电磁场的位函数
 - 矢量位与标量位
 
@@ -547,3 +549,40 @@ $)
     ) + bold(E) dot bold(J) = 0\
     "进入的电磁能量功率" + "电磁场能量增加功率" + "损耗功率" = 0
   $
+
+#let Re = $"Re"$
+#let jj = $upright(j)$
+
+== 时谐电磁场
+=== 复数表示
+设 $u(bold(r), t)$ 是一个以角频率 $omega$ 变化的标量函数，表达式为：
+$
+  u(bold(r), t) = u_m (bold(r))cos[ omega t + phi.alt (bold(r)) ]
+$
+可以通过复数取实部的方式表示为
+$
+  u(bold(r), t) &= Re{u_m (bold(r)) e^(jj phi.alt (bold(r))) e^(jj omega t)}\
+  &= Re{accent(u, .)(bold(r)) e^(jj omega t)}
+$
+其中 $accent(u, .)(bold(r)) = u_m (bold(r)) e^(jj phi.alt (bold(r)))$，称为 $u$ 的复数表示，复矢量只与空间有关，与时间无关，因为默认我们知道了其角频率
+
+=== 复电容率和复磁导率
+电导率为有限值的导电媒质存在欧姆损耗；电介质、磁介质中存在极化损耗和磁化损耗
+
+在时谐场中，有
+$
+  nabla times bold(H) = sigma bold(E) + jj omega epsilon bold(E) = jj omega (
+    epsilon - jj (sigma) / (omega)
+  )bold(E) = jj omega epsilon_c bold(E)
+$
+其中 $epsilon_c$ 称为等效复电容率
+$
+  epsilon_c = epsilon - jj sigma / omega
+$
+
+=== 平均坡印廷矢量
+
+$
+  bold(S)_(a v) &= 1 / T integral_(0)^(T) bold(S) dif t = omega / (2 pi) integral_(0)^( (2 pi) / omega) bold(S) dif t\
+  &= 1 / 2 Re[bold(E) times bold(H)^*]
+$

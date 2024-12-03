@@ -586,3 +586,54 @@ $
   bold(S)_(a v) &= 1 / T integral_(0)^(T) bold(S) dif t = omega / (2 pi) integral_(0)^( (2 pi) / omega) bold(S) dif t\
   &= 1 / 2 Re[bold(E) times bold(H)^*]
 $
+
+= 均匀平面波的传播
+*平面波*：等相位面为无穷大平面的电磁波
+
+*均匀平面波*：等相位面上电场和磁场的方向、振幅都保持不变的平面波
+== 理想介质中的的均匀平面波
+假设在无限大的无源空间中，充满线性、各向同性的均匀介质。时谐电磁场满足亥姆霍兹方程（这里暂时仅研究电场）
+$
+  nabla^2 bold(E) + k^2 bold(E) = 0 quad (k = omega sqrt(mu epsilon))
+$
+假设沿 $z$ 轴传播，则 $bold(E)$ 不是 $x$ 或 $y$ 的函数，即
+$
+  (diff bold(E)) / (diff x) = (diff bold(E)) / (diff y) = 0
+$
+则原矢量方程可化为以下的分量式
+$
+  cases(
+    frac(dif^2 E_x, dif z^2) + k^2 E_x = 0,
+    frac(dif^2 E_y, dif z^2) + k^2 E_y = 0,
+    frac(dif^2 E_z, dif z^2) + k^2 E_z = 0,
+  )
+$
+由于
+$
+  nabla dot bold(E) = (diff E_x) / (diff x) + (diff E_y) / (diff y) + (diff E_z) / (diff z) = 0 \
+  => (diff E_z) / (diff z) = 0\
+  => E_z = 0
+$
+所以又可化为
+$
+  cases(
+    frac(dif^2 E_x, dif z^2) + k^2 E_x = 0,
+    frac(dif^2 E_y, dif z^2) + k^2 E_y = 0,
+  )
+$
+类似的，磁场也可化简
+
+结论：均匀平面波的电场强度和磁场强度都垂直于波的传播方向 —— 横电磁波（TEM波）
+
+解此方程（$x$ 分量），得
+
+
+== 导电媒质中的均匀平面波
+
+== 电磁波的极化
+
+== 均匀平面波的反射与透射
+
+= 导行电磁波
+
+= 电磁辐射

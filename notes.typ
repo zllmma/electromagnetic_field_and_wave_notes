@@ -564,7 +564,7 @@ $
   u(bold(r), t) &= Re{u_m (bold(r)) e^(jj phi.alt (bold(r))) e^(jj omega t)}\
   &= Re{accent(u, .)(bold(r)) e^(jj omega t)}
 $
-其中 $accent(u, .)(bold(r)) = u_m (bold(r)) e^(jj phi.alt (bold(r)))$，称为 $u$ 的复数表示，复矢量只与空间有关，与时间无关，因为默认我们知道了其角频率
+其中 $accent(u, .)(bold(r)) = u_m (bold(r)) e^(jj phi.alt (bold(r)))$，称为 $u$ 的复数表示，复矢量只与空间有关，与时间无关，因为默认我们知道了角频率
 
 === 复电容率和复磁导率
 电导率为有限值的导电媒质存在欧姆损耗；电介质、磁介质中存在极化损耗和磁化损耗

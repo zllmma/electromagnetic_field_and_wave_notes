@@ -509,4 +509,21 @@ $)
 
 其中，单位矢量 $bold(e)_n$ 由媒质2指向媒质1
 
-==
+== 电磁场的位函数
+- 矢量位与标量位
+
+  令 $bold(B) = nabla times bold(A)$ ，称 $bold(A)$ 为电磁场的矢量位，则
+  $
+    gradient times bold(E) = -diff / (diff t) (nabla times bold(A))\
+    => nabla times (bold(E) + (diff bold(A)) / (diff t)) = 0
+  $
+  这说明 $bold(E) + frac(diff bold(A), diff t)$ 可以用一个标量函数的梯度来表示（将该标量函数称为电磁场的标量位），即
+  $
+    bold(E) + (diff bold(A)) / (diff t) = -nabla phi
+  $
+  通过规定 $bold(A)$ 的散度，可以得到唯一的 $bold(A)$ 和 $phi$，一般规定（洛仑兹条件）
+  $
+    nabla dot A = -mu epsilon (diff phi) / (diff t)
+  $
+
+== 电磁场的能量

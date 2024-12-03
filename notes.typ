@@ -527,3 +527,23 @@ $)
   $
 
 == 电磁场的能量
+- 在线性、各向同性的媒质中，电场能量密度，磁场能量密度，电磁场能量密度为
+  $
+    w_e = 1 / 2 bold(E) dot bold(D)\
+    w_m = 1 / 2 bold(H) dot bold(B)\
+    w = w_e + w_m
+  $
+- 坡印廷矢量（能流密度矢量）
+
+  表示穿过与能量流动方向相垂直的单位面积的功率
+  $
+    bold(S) = bold(E) times bold(H)
+  $
+
+- 坡印廷定理
+  $
+    nabla dot bold(S) + diff / (diff t) (
+      1 / 2 bold(H) dot bold(B) + 1 / 2 bold(E) dot bold(D)
+    ) + bold(E) dot bold(J) = 0\
+    "进入的电磁能量功率" + "电磁场能量增加功率" + "损耗功率" = 0
+  $

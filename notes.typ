@@ -467,4 +467,46 @@ $
 可以看出，电场对单位体积提供的功率为 $p = bold(J) dot bold(E)$
 
 == 麦克斯韦方程组
+=== 积分形式
+#bq($
+  integral.cont_C bold(H) dot dif bold(l) &= integral_(S) bold(J) dot dif bold(S) + integral_S frac(diff bold(D), diff t) dot dif bold(S)\
+  integral.cont_C bold(E) dot dif bold(l) &= - integral_S frac(diff bold(B), diff t) dot dif bold(S)\
+  integral.cont_S bold(B) dot dif bold(S) &= 0\
+  integral.cont_S bold(D) dot dif bold(S) &= integral_V rho dif V
+$)
 
+=== 微分形式
+#bq($
+  nabla times bold(H) &= bold(J) + (diff bold(D)) / (diff t)\
+  nabla times bold(E) &= -(diff bold(B)) / (diff t)\
+  nabla dot bold(B) &= 0\
+  nabla dot bold(D) &= rho
+$)
+
+对于线性，各向同性媒质，代入媒质本构关系 $bold(D) = epsilon bold(E), bold(B) = mu bold(H), bold(J) = sigma bold(E)$，得到关于$bold(E), bold(H)$ 的方程
+#bq($
+  nabla times bold(H) &= sigma bold(E) + epsilon (diff bold(E)) / (diff t)\
+  nabla times bold(E) &= - mu (diff bold(H)) / (diff t)\
+  nabla dot bold(H) &= 0\
+  nabla dot bold(E) &= rho / epsilon
+$)
+
+如果是*时谐电磁场*，则可将方程组改写为复数形式
+#bq($
+  nabla times bold(H) &= bold(J) + upright(j) omega bold(D)\
+  nabla times bold(E) &= - upright(j)omega bold(B)\
+  nabla times bold(B) &= 0\
+  nabla times bold(D) &= rho
+$)
+
+=== 电磁场的边界条件
+- $bE$ 的切向分量一定连续
+- $bD$ 的法向分量可能不连续，其不连续分量由自由面电荷密度决定，具体为
+  $ bold(e)_n dot (bold(D)_1 - bold(D)_2) = rho_S $
+- $bB$ 的法向分量一定连续
+- $bH$ 的切向分量可能不连续，其不连续分量由自由面电流密度决定，具体为
+  $ bold(e)_n times (bold(H)_1 - bold(H)_2) = bold(J)_S $
+
+其中，单位矢量 $bold(e)_n$ 由媒质2指向媒质1
+
+==

@@ -696,6 +696,96 @@ $
   $
 
 == 导电媒质中的均匀平面波
+导电媒质 $sigma != 0$，有传导电流存在，伴随着电磁能量的损耗
+
+波动方程
+$
+  nabla^2 bold(E) + k_c^2 bold(E) = 0 quad (k_c = omega sqrt(mu epsilon_c), epsilon_c = epsilon' - jj epsilon^(''))
+$
+沿 $z$ 轴传播的均匀平面电磁波解为
+$
+  bold(E)(z) = bold(e)_x E_(x m) e^(-jj k_c z) = bold(e)_x E_(x m) e^(-gamma z)
+$
+令 $jj k_c = gamma$，$gamma = alpha + jj beta$（$gamma$ 称为传播常数），则
+$
+  bold(E)(z) = bold(e)_x E_(x m)e^(-alpha z) e^(-jj beta z)\
+  => bold(E)(z, t) = bold(e)_x E_(x m) e^(-alpha z) cos(omega t - beta z)
+$
+$alpha$ 为衰减常数，$e^(-alpha z)$ 为衰减因子\
+$beta$ 为相移常数，$e^(-jj beta z)$ 为相位因子\
+
+- 相伴的磁场
+  $
+    bold(H)(z) = 1 / (eta_c) bold(e)_z times bold(E)(z) = bold(e)_y 1 / (abs(eta_c)) E_(x m) e^(-alpha z) e^(-jj (beta z + phi.alt))\
+    => bold(H)(z, t) = bold(e)_y 1 / (abs(eta_c)) E_(x m) e^(-alpha z) cos(omega t - beta z -phi.alt)
+  $
+  本征阻抗 $eta_c = sqrt(mu/epsilon_c) = abs(eta_c) e^(jj phi.alt)$
+
+- 传播参数
+  $
+    cases(
+      gamma^2 = (jj k_c)^2 = -k_c^2 = -omega^2 mu (epsilon - jj sigma / omega),
+      gamma^2 = (alpha + jj beta)^2 = alpha^2 - beta^2 + jj 2 alpha beta,
+    ) => cases(
+      alpha^2 - beta^2 = -omega^2 mu epsilon,
+      2 alpha beta = omega mu sigma,
+    )
+  $
+  解得 $alpha, beta$ 不仅与媒质有关，还与频率有关\
+  又因为 $lambda = (2pi) / beta, v = omega / beta$，所以波长和相速也不仅与媒质有关，还与频率有关
+- 平均坡印廷矢量
+  $
+    bold(S)_(a v) = 1 / 2 Re[bold(E)(z) times bold(H)^*(z)] = bold(e)_z 1 / (2 abs(eta_c)) E_(x m)^2 e^(-2 alpha z) cos phi.alt
+  $
+
+- 综上，导电媒质中的均匀平面波的传播特性为
+  + 电场强度 $bold(E)$ 、磁场强度 $bold(H)$ 与波的传播方向相互垂直，是横电磁波（TEM波）；
+  + 媒质的本征阻抗为复数，电场与磁场不同相位，磁场滞后于电场 $phi.alt$ 角；
+  + 在波的传播过程中，电场与磁场的振幅呈指数衰减
+  + 波的传播速度（相度）不仅与媒质参数有关，而且与频率有关（有色散）
+
+- 弱导电媒质（$(sigma)/(omega epsilon) << 1$）
+  $
+    cases(
+      alpha approx sigma / 2 sqrt(mu / epsilon),
+      beta approx omega sqrt(mu epsilon),
+    )\
+    eta_c approx sqrt(mu/epsilon) (1 + jj sigma / (2 omega epsilon))\
+  $
+  特点：衰减小，相位常数与非导电媒质的大致相等，电场、磁场之间的相位差较小
+
+- 良导体（$(sigma)/(omega epsilon) >> 1$）
+  $
+    alpha approx beta approx sqrt(omega mu sigma / 2) = sqrt(pi f mu sigma) prop sqrt(f)
+  $
+  相速
+  $
+    v = omega / beta approx sqrt((2 omega) / (mu sigma)) = sqrt(frac(4 pi f, mu sigma)) prop sqrt(f)
+  $
+  波长
+  $
+    lambda = (2pi) / (beta) = 2 sqrt(frac(pi, f mu sigma)) prop 1 / sqrt(f)
+  $
+  本征阻抗
+  $
+    eta_c = sqrt(mu/epsilon_c) approx sqrt(frac(jj omega mu, sigma)) = (1 + jj) sqrt(frac(pi f mu, sigma))
+  $
+  说明良导体中电磁波的*磁场强度的相位滞后于电场强度 $45^degree$*
+
+  趋肤效应：$f arrow.t $，$alpha arrow.t$，高频电磁波只能存在于良导体的表面层内
+
+  趋肤深度 $delta$ ：幅值衰减为表面的 $1/e$ 时传播的距离
+  $
+    - alpha delta = -1\
+    => delta = 1 / alpha = 1 / (sqrt(pi f mu sigma)) prop 1 / sqrt(f)\
+    => delta = 1 / beta = lambda / (2pi)
+  $
+- 群速
+
+  由 $v_g = (dif omega) / (dif beta)$，可得（推导略）
+  $
+    v_g = frac(v_p,1 - omega / v_p (dif v_p) / (dif omega))
+  $
 
 == 电磁波的极化
 

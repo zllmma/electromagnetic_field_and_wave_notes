@@ -362,9 +362,7 @@ $
 
 #bq([
   $
-    integral_(V) (phi gradient^2 psi - psi gradient^2 phi) dif V = integral.cont_S (
-      phi (diff psi) / (diff n) - psi (diff phi) / (diff n)
-    ) dif S
+    integral_(V) (phi gradient^2 psi - psi gradient^2 phi) dif V = integral.cont_S ( phi (diff psi) / (diff n) - psi (diff phi) / (diff n) ) dif S
   $
 ])
 == 亥姆霍兹定理
@@ -407,9 +405,7 @@ $
 + 电介质的本构关系
   - 电位移矢量
     #bq($
-      bold(D)(bold(r)) &= epsilon_0 bold(E)(bold(r)) + bold(P)(bold(r)) = epsilon_0 bold(E)(
-        bold(r)
-      )+chi_e epsilon_0 bold(E)(bold(r))\
+      bold(D)(bold(r)) &= epsilon_0 bold(E)(bold(r)) + bold(P)(bold(r)) = epsilon_0 bold(E)( bold(r) )+chi_e epsilon_0 bold(E)(bold(r))\
       &= (1 + chi_e) epsilon_0 bold(E)(bold(r))\
       &= epsilon_r epsilon_0 bold(E)(bold(r)) = epsilon bold(E)(bold(r))
     $)
@@ -544,9 +540,7 @@ $)
 
 - 坡印廷定理
   $
-    nabla dot bold(S) + diff / (diff t) (
-      1 / 2 bold(H) dot bold(B) + 1 / 2 bold(E) dot bold(D)
-    ) + bold(E) dot bold(J) = 0\
+    nabla dot bold(S) + diff / (diff t) ( 1 / 2 bold(H) dot bold(B) + 1 / 2 bold(E) dot bold(D) ) + bold(E) dot bold(J) = 0\
     "进入的电磁能量功率" + "电磁场能量增加功率" + "损耗功率" = 0
   $
 
@@ -571,9 +565,7 @@ $
 
 在时谐场中，有
 $
-  nabla times bold(H) = sigma bold(E) + jj omega epsilon bold(E) = jj omega (
-    epsilon - jj (sigma) / (omega)
-  )bold(E) = jj omega epsilon_c bold(E)
+  nabla times bold(H) = sigma bold(E) + jj omega epsilon bold(E) = jj omega ( epsilon - jj (sigma) / (omega) )bold(E) = jj omega epsilon_c bold(E)
 $
 其中 $epsilon_c$ 称为等效复电容率
 $
@@ -626,7 +618,82 @@ $
 结论：均匀平面波的电场强度和磁场强度都垂直于波的传播方向 —— 横电磁波（TEM波）
 
 解此方程（$x$ 分量），得
+$
+  E_x (z) &= A_1 e^(-jj k z) + A_2 e^(jj k z) \
+  &= E_(1 m) e^(jj phi.alt_1) e^(-jj k z) + E_(2 m) e^(jj phi.alt_2) e^(jj k z)\
+  => E_x (z, t) &= Re[E_x (t) e^(jj omega t)]\
+  &= E_(1 m) cos(omega t - k z + phi.alt_1) + E_(2 m) cos(omega t + k z + phi.alt_2)
+$
+第一项表示沿 $+z$ 方向传播的均匀平面波，第二项表示沿 $-z$ 方向传播的均匀平面波，这里只讨论沿 $+z$ 方向传播的均匀平面波，即
+$
+  E_x (z) = E_(x m) e^(-jj k z) e^(jj phi.alt_x)
+$
 
+- 相伴的磁场
+
+  由 $nabla times bold(E) = -jj omega mu bold(H)$，可得
+  $
+    bold(H) &= -frac(1, jj omega mu) nabla times bold(E)_x \
+    &= - bold(e)_y (1) / (jj omega mu) (diff E_x) / (diff z) = -bold(e)_y (1) / (jj omega mu) ( -jj k E_x ) = bold(e)_y (k) / (omega mu) E_(x m) e^(-jj k z) e^(jj phi.alt_x)\
+    &= bold(e)_y sqrt(epsilon / mu) E_(x m) e^(-jj(k z - phi.alt_x))\
+    &= 1 / eta bold(e)_z times bold(E)_x
+  $
+  结论：均匀平面波的电场和磁场相互垂直且同相位。其中 $eta = sqrt(mu / epsilon)$ 为波阻抗，在真空中为 $eta_0 =sqrt(mu_0 / epsilon_0) = 377 Omega$
+
+- 传播参数
+
+  - 波长 $lambda$ ：空间相位差位 $2 pi$ 对应的两个波阵面的距离\
+  - 相位常数（波数） $k$ ：传播单位距离的相位变化\
+    $
+      k lambda = 2 pi\
+      => k = (2 pi) / lambda\
+      => lambda = (2 pi) / k = (2 pi) / (omega sqrt(mu epsilon)) = 1 / (f sqrt(mu epsilon))
+    $
+  - 相速 $v_p$ ：等相位面传播的速度\
+    $
+      v_p = omega / k = 1 / sqrt(mu epsilon)
+    $
+    真空中的相速为
+    $ c = 1 / sqrt(mu_0 epsilon_0) = 3 times 10^8 " " upright(m) \/ upright(s) $
+  - 能量密度与能流密度
+
+    电磁能量密度
+    $
+      w_e = 1 / 2 epsilon E_m^2 = w_m\
+      w = w_e + w_m = epsilon E_m^2 = mu H_m^2\
+    $
+    坡印廷矢量
+    $
+      bold(S) = bold(E) times bold(H) = bold(e)_z 1 / eta E_m^2 cos^2(omega t - k z + phi.alt_x)
+    $
+    平均能量密度
+    $
+      w_(a v) = 1 / 2 epsilon E_m^2 = 1 / 2 mu H_m^2 = 1 / 2 eta E_m H_m
+    $
+    平均坡印廷矢量
+    $
+      bold(S)_(a v) &= 1 / 2 Re[bold(E)(z) times bold(H)^(*)(z)] = bold(e)_z 1 / (2 eta) E_m^2\
+      &= bold(e)_z 1 / 2 epsilon E_m^2 1 / (sqrt(mu epsilon)) = bold(e)_z 1 / 2 epsilon E_m^2 v_p = w_(a v) bold(v)_p
+    $
+
+  - 综上，理想介质中的均匀平面波的传播特性为
+
+    + 电场、磁场与传播方向之间相互垂直，是横电磁波（TEM波）
+    + 无衰减，电场与磁场的振幅不变
+    + 波阻抗为实数，电场与磁场同相位
+    + 电磁波的相速与频率无关，无色散
+    + 电场能量密度等于磁场能量密度，能量的传输速度等于相速
+
+- 沿任意方向传播的均匀平面波
+
+  设传播方向的单位矢量为 $bold(e)_n$，定义波矢量 $bold(k) = k bold(e)_n$，则电场矢量可表示为
+  $
+    bold(E)(bold(r)) = bold(E)_m e^(-jj bold(k) dot bold(r))
+  $
+  相应的磁场表示为
+  $
+    bold(H)(bold(r)) = 1 / eta bold(e)_n times bold(E)(bold(r)) = 1 / eta bold(e)_n times bold(E)_m e^(-jj bold(k) dot bold(r))
+  $
 
 == 导电媒质中的均匀平面波
 

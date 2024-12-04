@@ -772,9 +772,9 @@ $beta$ 为相移常数，$e^(-jj beta z)$ 为相位因子\
   $
   说明良导体中电磁波的*磁场强度的相位滞后于电场强度 $45^degree$*
 
-  趋肤效应：$f arrow.t $，$alpha arrow.t$，高频电磁波只能存在于良导体的表面层内
+  - 趋肤效应：$f arrow.t $，$alpha arrow.t$，高频电磁波只能存在于良导体的表面层内
 
-  趋肤深度 $delta$ ：幅值衰减为表面的 $1/e$ 时传播的距离
+  - 趋肤深度 $delta$ ：幅值衰减为表面的 $1/e$ 时传播的距离
   $
     - alpha delta = -1\
     => delta = 1 / alpha = 1 / (sqrt(pi f mu sigma)) prop 1 / sqrt(f)\
@@ -788,7 +788,25 @@ $beta$ 为相移常数，$e^(-jj beta z)$ 为相位因子\
   $
 
 == 电磁波的极化
+一般情况下，沿 $+z$ 方向传播的均匀平面波 $bold(E) = bold(e)_x E_x + bold(e)_y E_y$
+$
+  E_x (z, t) = E_(x m) cos(omega t - k z + phi.alt_x)\
+  E_y (z, t) = E_(y m) cos(omega t - k z + phi.alt_y)
+$
+极化的四种形式
+#table(
+  rows: auto,
+  columns: 3,
+  align: (center, center, center),
+  [$Delta phi.alt = phi.alt_y - phi.alt_x$], [极化方式], [备注],
+  [$0" 或 " plus.minus pi$],
+  [线极化],
+  [$Delta phi.alt = 0$，在1、3象限\ $Delta phi.alt = plus.minus pi$，在2、4象限
+  ],
 
+  [$plus.minus pi / 2$], [圆极化], [$Delta phi.alt = pi / 2$，左旋\ $Delta phi.alt = -pi/2$，右旋],
+  [其他], [椭圆极化], [$0 < Delta phi.alt < pi $，左旋\ $-pi < Delta phi.alt < 0$，右旋],
+)
 == 均匀平面波的反射与透射
 
 = 导行电磁波

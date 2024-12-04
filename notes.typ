@@ -836,6 +836,27 @@ $
   $Gamma = 0$，$S = 1$，为行波\
   $Gamma = 1$，$S = oo$，为驻波
 
+=== 多层介质平面的垂直入射
+这里以三层为例\
+等效波阻抗 $eta_(e f)$，媒质2和媒质3对 $z = 0$ 处的反射系数影响可用一种等效媒质来代替，此媒质的本征阻抗为 $eta_(e f)$
+$
+  eta_(e f) = eta_2 frac(eta_3 + jj eta_2 tan(beta_2 d), eta_2 + jj eta_3 tan(beta_2 d))
+$
+$
+  Gamma_1 = frac(eta_(e f) - eta_1, eta_(e f) + eta_1)\
+  tau_1 = frac(1 + Gamma_1, e^(jj beta_2 d)+Gamma_2 e^(-jj beta_2 d))
+$
+
+- 四分之一波长匹配层
+
+  若媒质2厚度 $d = lambda_2 / 4$，$eta_2 = sqrt(eta_1 eta_3)$，就能消除媒质1表面的反射
+
+- 半波长介质窗
+
+  若 $eta_1 = eta_3$，当媒质2厚度 $d = lambda_2 / 2$ 时，就能消除反射，可以无损通过厚度为 $lambda_2 / 2$的媒质层
+
+===
+
 = 导行电磁波
 
 = 电磁辐射

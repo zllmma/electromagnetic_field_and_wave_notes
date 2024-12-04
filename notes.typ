@@ -855,8 +855,26 @@ $
 
   若 $eta_1 = eta_3$，当媒质2厚度 $d = lambda_2 / 2$ 时，就能消除反射，可以无损通过厚度为 $lambda_2 / 2$的媒质层
 
-===
+=== 理想介质分界面的斜入射
+假设入射面在 $x z$ 平面上，入射角为 $theta_i$，折射角为 $theta_t$，反射角为 $theta_r$，则
+$
+  bold(e)_i = bold(e)_x sin(theta_i) + bold(e)_z cos(theta_i)\
+  bold(e)_r = bold(e)_x sin(theta_r) - bold(e)_z cos(theta_r)\
+  bold(e)_t = bold(e)_x sin(theta_t) + bold(e)_z cos(theta_t)
+$
 
+由边界条件得到结论为
+$
+  theta_r = theta_i\
+  k_1 sin(theta_i) = k_2 sin(theta_t)
+$
+其中 $k_1 = omega sqrt(epsilon_1 mu_1), " " k_2 = omega sqrt(epsilon_2 mu_2)$
+
+- 全反射与全透射
+
+  全反射临界角 $theta_c = display(arcsin(sqrt(epsilon_2/epsilon_1)))$
+
+  全透射临界角 $theta_c = display(arctan(sqrt(epsilon_2/epsilon_1)))$
 = 导行电磁波
 
 = 电磁辐射

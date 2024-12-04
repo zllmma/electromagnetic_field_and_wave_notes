@@ -793,7 +793,7 @@ $
   E_x (z, t) = E_(x m) cos(omega t - k z + phi.alt_x)\
   E_y (z, t) = E_(y m) cos(omega t - k z + phi.alt_y)
 $
-极化的四种形式
+极化的三种形式
 #table(
   rows: auto,
   columns: 3,
@@ -807,7 +807,34 @@ $
   [$plus.minus pi / 2$], [圆极化], [$Delta phi.alt = pi / 2$，左旋\ $Delta phi.alt = -pi/2$，右旋],
   [其他], [椭圆极化], [$0 < Delta phi.alt < pi $，左旋\ $-pi < Delta phi.alt < 0$，右旋],
 )
+
 == 均匀平面波的反射与透射
+*现象*：电磁波从一介质传播到另一介质时，一部分反射，一部分透射\
+
+*分析方法*：已知反射波和透射波的形式，通过边界条件确定具体参数
+
+=== 媒质分界面的垂直入射
+$
+  cases(
+    display(E_(i m) + E_(r m) = E_(t m)),
+    display(1/(eta_(1 c)) (E_(i m) - E_(r m)) = 1/(eta_(2 c)) E_(t m))
+  )
+$
+反射系数 $display(Gamma = E_(r m) / E_(i m) = frac(eta_(2 c) - eta_(1 c), eta_(2 c)+eta_(1 c)))$
+
+透射系数 $display(tau = E_(t m) / E_(i m) = frac(2 eta_(2 c), eta_(2 c) + eta_(1 c)))$
+
+性质：
+- $1 + Gamma = tau$
+- 若媒质2是理想导体，即 $sigma_2 = oo$，则 $eta_(2 c) = 0$，有 $Gamma = -1$，$tau = 0$
+- 若两种媒质都是理想介质，即 $sigma_1 = sigma_2 = 0$，则 $Gamma = frac(eta_(2 ) - eta_(1 ), eta_(2 )+eta_(1 ))$，$tau = frac(2 eta_(2 ), eta_(2 ) + eta_(1 ))$
+
+- 驻波系数
+  $
+    S = frac(1 + abs(Gamma), 1 - abs(Gamma))
+  $
+  $Gamma = 0$，$S = 1$，为行波\
+  $Gamma = 1$，$S = oo$，为驻波
 
 = 导行电磁波
 

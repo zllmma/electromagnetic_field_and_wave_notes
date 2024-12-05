@@ -928,6 +928,25 @@ $
 - 单模区：$a<lambda<2a => lambda / 2 < a < lambda$
 - 多模区：$lambda<a$
 
+== 圆柱形波导
+截止波数 $k_(c m n) = (P'_(m n)) / (a)$
+
+截止频率 $f_(c m n) = (k_(c m n)) / (2 pi sqrt(mu epsilon))$
+
+其余的一些参数和矩形波导基本一致
+
+== 同轴波导
+
+同轴波导传播TEM波
+
+截止波数 $k_c = 0$，所以 $lambda_c = 0$，TEM模为主模\
+传播常数 $gamma = jj k = jj omega sqrt(mu epsilon) = jj beta$\
+相位常数 $beta = omega sqrt(mu epsilon)$\
+相速 $v_p = omega / beta$\
+波阻抗 $Z_(T E M) = E_(rho) / H_(phi.alt) = gamma / (jj omega epsilon) = sqrt(mu/epsilon) = eta$
+
+== 谐振腔
+
 
 
 = 电磁辐射

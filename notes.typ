@@ -875,6 +875,59 @@ $
   全反射临界角 $theta_c = display(arcsin(sqrt(epsilon_2/epsilon_1)))$
 
   全透射临界角 $theta_c = display(arctan(sqrt(epsilon_2/epsilon_1)))$
+
+
+
 = 导行电磁波
+
+做以下假设：
+- 波导内部是理想导体，即 $sigma = oo$
+- 波导内填充无损耗介质
+- 波导内无源，即 $rho = 0," "bold(J) = 0$
+- 波导内的电磁场为时谐场
+
+导波分类
+- $E_z = 0, " "H_z = 0$，TEM波
+- $E_z != 0, " "H_z = 0$，TM波
+- $E_z = 0, " "H_z != 0$，TE波
+
+== 矩形波导
+可以传播TM波和TE波，不能传播TEM波
+
+=== 场分布
+矩形波导中的TE波和TM波的特点：
+- $m, n$ 有不同的取值，对于每一种组合都有相应的截止波数 $k_(c m n) = [((m pi) / a)^2+((n pi)/b)^2]^(1/2)$ 和场分布，称为 $"TM"_(m n)$ 模或 $"TE"_(m n)$ 模
+
+- 由于对相同的 $m$ 和 $n$，$"TM"_(m n)$ 模和 $"TE"_(m n)$ 模的截止波数 $k_(c m n)$ 相同，这种情况称为模式的简并；
+
+- 不存在 $"TM"_(m 0)$ 和 $"TE"_(0 n)$ 模
+
+=== 传播特性
+相位常数
+$
+  beta_( m n) &= sqrt(omega^2 mu epsilon - ((m pi)/a)^2 - ((n pi)/b)^2)\
+  &= k sqrt(1 - ((k_(c m n))/(k))^2)\
+  &= k sqrt(1 - ((f_(c m n))/(f))^2)
+$
+波速
+$
+  v_(p m n) = omega / (beta_(m n)) = omega / (k sqrt(1-((f_(c m n))/(f))^2)) > omega / k
+$
+波导波长
+$
+  lambda_(g m n) = (2 pi) / (beta_(m n))
+$
+结论：当 $f > f_(c m n) = frac(k_(c m n),2 pi sqrt(mu epsilon))$ 时，矩形波导才能传播相应模式的电磁波
+
+=== 主模
+主模：截止频率最低的模式\
+高次模：除主模以外的模式\
+
+模式分布：
+- 截止区：$lambda > 2 a$
+- 单模区：$a<lambda<2a => lambda / 2 < a < lambda$
+- 多模区：$lambda<a$
+
+
 
 = 电磁辐射

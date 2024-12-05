@@ -946,7 +946,16 @@ $
 波阻抗 $Z_(T E M) = E_(rho) / H_(phi.alt) = gamma / (jj omega epsilon) = sqrt(mu/epsilon) = eta$
 
 == 谐振腔
+=== 矩形谐振腔
+可将一段矩形波导两端封闭而成
 
+尺寸：$a times b times l$
 
+不同的 $m,n,p$ 对应不同振荡模式，$"TE"_(m n p)$ 模或 $"TM"_(m n p)$ 模
+
+- 谐振频率
+$
+  f_(m n p) = 1 / (2 sqrt(mu epsilon)) sqrt((m/a)^2+(n/b)^2+(p/l)^2)
+$
 
 = 电磁辐射

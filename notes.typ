@@ -963,6 +963,139 @@ $
 - 采用“路”的分析方法，把传输线作为分布参数电路处理
 - 由基尔霍夫定律导出传输线方程，进而讨论波沿线的传播特性
 
+均匀传输线的电路参数：
+- $R_1$ ------ 单位长度电阻
+- $L_1$ ------ 单位长度电感
+- $G_1$ ------ 单位长度电导
+- $C_1$ ------ 单位长度电容
+
 === 传输线方程及其解
+由基尔霍夫定律，得到电报方程
+$
+  cases(
+    display(-frac(diff u, diff z) = R_1 i + L_1 frac(diff i, diff t)),
+    display(-frac(diff i, diff z) = G_1 u + C_1 frac(diff u, diff t))
+  )
+$
+如果 $u, i$ 是时谐的，则方程化为
+$
+  cases(
+    display(-frac(dif U(z), dif z) = (R_1 + jj omega L_1) I(z)),
+    display(-frac(dif I(z), dif z) = (G_1 + jj omega C_1) U(z))
+  )
+$
+对 $z$ 求导得
+$
+  cases(
+    display(-frac(dif^2 U(z), dif z^2) = (R_1 + jj omega L_1) frac(dif I(z), dif z)),
+    display(-frac(dif^2 I(z), dif z^2) = (G_1 + jj omega C_1) frac(dif U(z), dif z))
+  )
+$
+将 $(dif U(z))/(dif z), (dif I(z))/(dif z)$ 代入 ，得
+$
+  cases(
+    display(frac(dif^2 U(z), dif z^2) = gamma^2 U(z)),
+    display(frac(dif^2 I(z), dif z^2) = gamma^2 I(z))
+  )
+$
+
+解得
+$
+  cases(
+    display(U(z) = A_1 e^(-gamma z) + A_2 e^(gamma z)),
+    display(I(z) = 1/(Z_0) (A_1 e^(-gamma z) - A_2 e^(gamma z)))
+  )
+$
+其中
+$
+  gamma = sqrt((R_1 + jj omega L_1)(G_1 + jj omega C_1))\
+  Z_0 = sqrt((R_1 + jj omega L_1)/(G_1 + jj omega C_1))
+$
+$A_1, A_2$ 由边界条件计算
+
+=== 传输线特性参数
+电压（电流）表达式中，带有 $e^(-gamma z)$ 项的称为入射波电压（电流），带有 $e^(gamma z)$ 项的称为反射波电压（电流）
+
++ 特性阻抗
+  $
+    Z_0 = sqrt((R_1 + jj omega L_1)/(G_1 + jj omega C_1))
+  $
+  对于无损耗传输线，$R_1 = G_1 = 0$，$Z_0 = sqrt(L_1 / C_1)$
+
+  - 平行双线
+    $
+      Z_0 = frac(120, sqrt(epsilon_r)) ln((2D) / d)
+    $
+  - 同轴线
+    $
+      Z_0 = frac(60, sqrt(epsilon_r)) ln((D) / d)
+    $
++ 传播常数
+  $
+    gamma = sqrt((R_1 + jj omega L_1)(G_1 + jj omega C_1)) = alpha + jj beta
+  $
+  对于无损耗传输线，$alpha = 0$，$beta = omega sqrt(L_1 C_1)$
+
++ 相速
+  $
+    v_p = omega / beta
+  $
+
++ 波长
+  $
+    lambda_g = (2 pi) / beta
+  $
+
+=== 传输线的工作参数
++ 输入阻抗
+
+  - 传输线上任一点的电压和电流的比值定义为该点沿负载端看去的输入阻抗
+    $
+      Z_("in") (z') = Z_0 frac(Z_L + Z_0 tanh(gamma z'), Z_0 + Z_L tanh(gamma z'))
+    $
+    其中 $Z_L = U_2 / I_2$，为终端负载阻抗
+
+  - 当传输线为无损耗传输线时，$gamma = jj beta$
+    $
+      Z_("in")(z') = Z_0 frac(Z_L + jj Z_0 tan(beta z'), Z_0 + jj Z_L tan(beta z'))
+    $
+
+  - 且对于终端短路线
+    $
+      Z_("ins") = jj Z_0 tan(beta z')
+    $
+
+  - 对于终端开路线
+    $
+      Z_("ino") = -jj Z_0 cot(beta z') = Z_0 / (jj tan(beta z'))\
+      => Z_("ins") dot Z_("ino") = Z_0^2
+    $
+
++ 反射系数
+
+  传输线上任一点的反射波电压与入射波电压的比值定义为该点的反射系数：
+  $
+    Gamma(z') = Gamma_2 e^(-2gamma z')
+  $
+  其中
+  $
+    Gamma_2 = frac(Z_(L) - Z_0, Z_(L) + Z_0) : cases(
+      Gamma_2 = 0 quad & (Z_L = Z_0) quad ("终端阻抗等于特性阻抗"),
+      Gamma_2 = -1 & (Z_L = 0) quad ("终端短路线"),
+      Gamma_2 =  1 & (Z_L = oo) quad ("终端开路线") ,
+      abs(Gamma_2) = 1 & (Z_L = jj X_L) quad ("终端负载为纯电抗"),
+    )
+  $
+
++ 驻波系数与行波系数
+传输线上电压最大值与电压最小值之比，称为电压驻波系数或电压驻波比 $S$ ，其倒数称为行波系数 $K$
+
+对于无损耗线
+$
+  S = frac(1 + abs(Gamma_2), 1 - abs(Gamma_2))\
+  K = 1 / S = frac(1 - abs(Gamma_2), 1 + abs(Gamma_2))
+$
+
+===
 
 = 电磁辐射
